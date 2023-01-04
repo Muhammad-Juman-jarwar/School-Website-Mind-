@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
+import { Button, Tab } from "@mui/material";
 import React from "react";
-import "./signin&upStyles.css";
 
 const Header = () => {
   return (
@@ -50,10 +50,24 @@ const Header = () => {
                       </div>
                     </div>
                     <div className='mean-last'>
-                      <a href='#'>
-                        <img src='assets/images/search_icon.png' alt='#' />
-                      </a>
-                      <Link className="login-signup" to="/signup"> <span>login</span>/<span>sing up</span></Link>
+                      <Link to="/signin">
+                        <Button
+                          className='my-2 my-sm-0 login-signup'
+                          variant='contained'
+                          size='small'
+                        >
+                          Login
+                        </Button>
+                      </Link>
+                      <Link to="/signup">
+                        <Button 
+                        variant='contained' 
+                        className="my-2 my-sm-0 login-signup"
+                        size='small'>
+                          Sign Up
+                        </Button>
+                      </Link>
+                      {/* <Link className="login-signup" to="/signup"> <span>login</span>/<span>sing up</span></Link> */}
                     </div>
                   </div>
                 </div>
