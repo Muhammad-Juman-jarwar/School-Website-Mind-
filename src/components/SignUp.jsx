@@ -4,186 +4,185 @@ import "./Signin.css";
 
 const isNotEmpty = (value) => value.trim() !== "";
 const isEmail = (value) => {
-  if(value.includes(" ")){
+  if (value.includes(" ")) {
     return !isUsername;
-  }
-  else if (value.includes("@")){
+  } else if (value.includes("@")) {
     return isUsername;
-  }else {
+  } else {
     return !isUsername;
   }
-}
+};
 const isUsername = (value) => {
-  if(value.length <= 7){
+  if (value.length <= 7) {
     return !isUsername;
   }
-  if(value.includes(" ")){
+  if (value.includes(" ")) {
     return !isUsername;
   }
-  if (value.includes("@")){
+  if (value.includes("@")) {
     return isUsername;
-  }else if(value.includes(",")){
+  } else if (value.includes(",")) {
     return isUsername;
-  }else if(value.includes(".")){
+  } else if (value.includes(".")) {
     return isUsername;
-  }else if(value.includes("!")){
+  } else if (value.includes("!")) {
     return isUsername;
-  }else if(value.includes("?")){
+  } else if (value.includes("?")) {
     return isUsername;
-  }else if(value.includes("/")){
+  } else if (value.includes("/")) {
     return isUsername;
-  }else if(value.includes("\\")){
+  } else if (value.includes("\\")) {
     return isUsername;
-  }else if(value.includes("#")){
+  } else if (value.includes("#")) {
     return isUsername;
-  }else if(value.includes("$")){
+  } else if (value.includes("$")) {
     return isUsername;
-  }else if(value.includes("%")){
+  } else if (value.includes("%")) {
     return isUsername;
-  }else if(value.includes("^")){
+  } else if (value.includes("^")) {
     return isUsername;
-  }else if(value.includes("&")){
+  } else if (value.includes("&")) {
     return isUsername;
-  }else if(value.includes("*")){
+  } else if (value.includes("*")) {
     return isUsername;
-  }else if(value.includes("(")){
+  } else if (value.includes("(")) {
     return isUsername;
-  }else if(value.includes(")")){
+  } else if (value.includes(")")) {
     return isUsername;
-  }else if(value.includes("-")){
+  } else if (value.includes("-")) {
     return isUsername;
-  }else if(value.includes("_")){
+  } else if (value.includes("_")) {
     return isUsername;
-  }else if(value.includes("+")){
+  } else if (value.includes("+")) {
     return isUsername;
-  }else if(value.includes("=")){
+  } else if (value.includes("=")) {
     return isUsername;
-  }else if(value.includes("{")){
+  } else if (value.includes("{")) {
     return isUsername;
-  }else if(value.includes("}")){
+  } else if (value.includes("}")) {
     return isUsername;
-  }else if(value.includes("[")){
+  } else if (value.includes("[")) {
     return isUsername;
-  }else if(value.includes("]")){
+  } else if (value.includes("]")) {
     return isUsername;
-  }else if(value.includes(":")){
+  } else if (value.includes(":")) {
     return isUsername;
-  }else if(value.includes(";")){
+  } else if (value.includes(";")) {
     return isUsername;
-  }else if(value.includes("'")){
+  } else if (value.includes("'")) {
     return isUsername;
-  }else if(value.includes('"')){
+  } else if (value.includes('"')) {
     return isUsername;
-  }else if(value.includes("<")){
+  } else if (value.includes("<")) {
     return isUsername;
-  }else if(value.includes(">")){
+  } else if (value.includes(">")) {
     return isUsername;
-  }else if(value.includes("1")){
+  } else if (value.includes("1")) {
     return isUsername;
-  }else if(value.includes("2")){
+  } else if (value.includes("2")) {
     return isUsername;
-  }else if(value.includes("3")){
+  } else if (value.includes("3")) {
     return isUsername;
-  }else if(value.includes("4")){
+  } else if (value.includes("4")) {
     return isUsername;
-  }else if(value.includes("5")){
+  } else if (value.includes("5")) {
     return isUsername;
-  }else if(value.includes("6")){
+  } else if (value.includes("6")) {
     return isUsername;
-  }else if(value.includes("7")){
+  } else if (value.includes("7")) {
     return isUsername;
-  }else if(value.includes("8")){
+  } else if (value.includes("8")) {
     return isUsername;
-  }else if(value.includes("9")){
+  } else if (value.includes("9")) {
     return isUsername;
-  }else if(value.includes("0")){
+  } else if (value.includes("0")) {
     return isUsername;
-  }else{
+  } else {
     return !isUsername;
   }
 };
 const isPassword = (value) => {
-  if(value.length <= 7){
+  if (value.length <= 7) {
     return !isPassword;
-  }else if(value.includes(" ")){
+  } else if (value.includes(" ")) {
     return !isPassword;
-  }else if(value.includes(",")){
+  } else if (value.includes(",")) {
     return isPassword;
-  }else if(value.includes(".")){
+  } else if (value.includes(".")) {
     return isPassword;
-  }else if(value.includes("!")){
+  } else if (value.includes("!")) {
     return isPassword;
-  }else if(value.includes("?")){
+  } else if (value.includes("?")) {
     return isPassword;
-  }else if(value.includes("/")){
+  } else if (value.includes("/")) {
     return isPassword;
-  }else if(value.includes("\\")){
+  } else if (value.includes("\\")) {
     return isPassword;
-  }else if(value.includes("#")){
+  } else if (value.includes("#")) {
     return isPassword;
-  }else if(value.includes("$")){
+  } else if (value.includes("$")) {
     return isPassword;
-  }else if(value.includes("%")){
+  } else if (value.includes("%")) {
     return isPassword;
-  }else if(value.includes("^")){
+  } else if (value.includes("^")) {
     return isPassword;
-  }else if(value.includes("&")){
+  } else if (value.includes("&")) {
     return isPassword;
-  }else if(value.includes("*")){
+  } else if (value.includes("*")) {
     return isPassword;
-  }else if(value.includes("(")){
+  } else if (value.includes("(")) {
     return isPassword;
-  }else if(value.includes(")")){
+  } else if (value.includes(")")) {
     return isPassword;
-  }else if(value.includes("-")){
+  } else if (value.includes("-")) {
     return isPassword;
-  }else if(value.includes("_")){
+  } else if (value.includes("_")) {
     return isPassword;
-  }else if(value.includes("+")){
+  } else if (value.includes("+")) {
     return isPassword;
-  }else if(value.includes("=")){
+  } else if (value.includes("=")) {
     return isPassword;
-  }else if(value.includes("{")){
+  } else if (value.includes("{")) {
     return isPassword;
-  }else if(value.includes("}")){
+  } else if (value.includes("}")) {
     return isPassword;
-  }else if(value.includes("[")){
+  } else if (value.includes("[")) {
     return isPassword;
-  }else if(value.includes("]")){
+  } else if (value.includes("]")) {
     return isPassword;
-  }else if(value.includes(":")){
+  } else if (value.includes(":")) {
     return isPassword;
-  }else if(value.includes(";")){
+  } else if (value.includes(";")) {
     return isPassword;
-  }else if(value.includes("'")){
+  } else if (value.includes("'")) {
     return isPassword;
-  }else if(value.includes('"')){
+  } else if (value.includes('"')) {
     return isPassword;
-  }else if(value.includes("<")){
+  } else if (value.includes("<")) {
     return isPassword;
-  }else if(value.includes(">")){
+  } else if (value.includes(">")) {
     return isPassword;
-  }else if(value.includes("1")){
+  } else if (value.includes("1")) {
     return isPassword;
-  }else if(value.includes("2")){
+  } else if (value.includes("2")) {
     return isPassword;
-  }else if(value.includes("3")){
+  } else if (value.includes("3")) {
     return isPassword;
-  }else if(value.includes("4")){
+  } else if (value.includes("4")) {
     return isPassword;
-  }else if(value.includes("5")){
+  } else if (value.includes("5")) {
     return isPassword;
-  }else if(value.includes("6")){
+  } else if (value.includes("6")) {
     return isPassword;
-  }else if(value.includes("7")){
+  } else if (value.includes("7")) {
     return isPassword;
-  }else if(value.includes("8")){
+  } else if (value.includes("8")) {
     return isPassword;
-  }else if(value.includes("9")){
+  } else if (value.includes("9")) {
     return isPassword;
-  }else if(value.includes("0")){
+  } else if (value.includes("0")) {
     return isPassword;
-  }else{
+  } else {
     return !isPassword;
   }
 };
@@ -229,10 +228,16 @@ const SignUp = () => {
     inputBlurHandler: PasswordBlurHandler,
     reset: resetPassword,
   } = useInput(isPassword);
-  
+
   let formIsValid = false;
 
-  if (firstNameIsValid && lastNameIsValid && emailIsValid && UsernameIsValid && PasswordIsValid) {
+  if (
+    firstNameIsValid &&
+    lastNameIsValid &&
+    emailIsValid &&
+    UsernameIsValid &&
+    PasswordIsValid
+  ) {
     formIsValid = true;
   }
 
@@ -244,7 +249,13 @@ const SignUp = () => {
     }
 
     console.log("Submitted!");
-    console.log(firstNameValue, lastNameValue, emailValue, UsernameValue, PasswordValue);
+    console.log(
+      firstNameValue,
+      lastNameValue,
+      emailValue,
+      UsernameValue,
+      PasswordValue
+    );
 
     resetFirstName();
     resetLastName();
@@ -259,14 +270,12 @@ const SignUp = () => {
   const lastNameClasses = lastNameHasError
     ? "form-control invalid"
     : "form-control";
-  const emailClasses = emailHasError 
-    ? "form-control invalid" 
+  const emailClasses = emailHasError ? "form-control invalid" : "form-control";
+  const UsernameClasses = UsernameHasError
+    ? "form-control invalid"
     : "form-control";
-  const UsernameClasses = UsernameHasError 
-    ? "form-control invalid" 
-    : "form-control";
-  const PasswordClasses = PasswordHasError 
-    ? "form-control invalid" 
+  const PasswordClasses = PasswordHasError
+    ? "form-control invalid"
     : "form-control";
 
   return (
@@ -304,7 +313,7 @@ const SignUp = () => {
               )}
             </div>
           </div>
-          <div className={emailClasses}> 
+          <div className={emailClasses}>
             <label htmlFor='name'>E-Mail Address</label>
             <input
               type='text'
@@ -327,7 +336,10 @@ const SignUp = () => {
               onBlur={UsernameBlurHandler}
             />
             {UsernameHasError && (
-              <p className='error-text'>A Username must be Greater than 7 Numbers, Alphabets and Special Characters.</p>
+              <p className='error-text'>
+                A Username must be Greater than 7 Numbers, Alphabets and Special
+                Characters.
+              </p>
             )}
           </div>
           <div className={PasswordClasses}>
@@ -340,18 +352,22 @@ const SignUp = () => {
               onBlur={PasswordBlurHandler}
             />
             {PasswordHasError && (
-              <p className='error-text'>Please enter a Strong Password (Greater Than 7 Letters).</p>
+              <p className='error-text'>
+                Please enter a Strong Password (Greater Than 7 Letters).
+              </p>
             )}
           </div>
           <div className='form-actions'>
             <button disabled={!formIsValid}>Sign Up</button>
           </div>
         </form>
-        <div className="LinksSignup">
-              <div className="createaccount">
-                <Link to="/signin"><p>Already Have an Account</p></Link>
-              </div>
-              </div>
+        <div className='LinksSignup'>
+          <div className='createaccount'>
+            <Link to='/signin'>
+              <p>Already Have an Account</p>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

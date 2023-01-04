@@ -11,7 +11,7 @@ const isEmail = (value) => {
   }else {
     return !isUsername;
   }
-}
+};
 const isUsername = (value) => {
   if(value.length <= 7){
     return !isUsername;
@@ -102,7 +102,8 @@ const isUsername = (value) => {
   }
 };
 
-const Signin = () => {
+const Signin = (props) => {
+
   const {
     value: firstNameValue,
     isValid: firstNameIsValid,
@@ -124,14 +125,14 @@ const Signin = () => {
 
   if (firstNameIsValid && emailIsValid) {
     formIsValid = true;
-  }
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
 
     if (!formIsValid) {
       return;
-    }
+    };
 
     console.log("Submitted!");
     console.log(firstNameValue, emailValue);

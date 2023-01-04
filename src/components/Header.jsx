@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Button, Tab } from "@mui/material";
+import { Button } from "@mui/material";
 import React from "react";
 
 const Header = () => {
@@ -67,7 +67,6 @@ const Header = () => {
                           Sign Up
                         </Button>
                       </Link>
-                      {/* <Link className="login-signup" to="/signup"> <span>login</span>/<span>sing up</span></Link> */}
                     </div>
                   </div>
                 </div>
