@@ -1,10 +1,108 @@
+import { Link } from "react-router-dom";
 import useInput from "../hooks/use-input";
 import "./Signin.css";
 
-const isNotEmpty = (value) => value.trim() !== "";
-const isEmail = (value) => value.includes("@");
+const isEmail = (value) => {
+  if(value.includes(" ")){
+    return !isUsername;
+  }
+  else if (value.includes("@")){
+    return isUsername;
+  }else {
+    return !isUsername;
+  }
+}
+const isUsername = (value) => {
+  if(value.length <= 7){
+    return !isUsername;
+  }
+  if(value.includes(" ")){
+    return !isUsername;
+  }
+  if (value.includes("@")){
+    return isUsername;
+  }else if(value.includes(",")){
+    return isUsername;
+  }else if(value.includes(".")){
+    return isUsername;
+  }else if(value.includes("!")){
+    return isUsername;
+  }else if(value.includes("?")){
+    return isUsername;
+  }else if(value.includes("/")){
+    return isUsername;
+  }else if(value.includes("\\")){
+    return isUsername;
+  }else if(value.includes("#")){
+    return isUsername;
+  }else if(value.includes("$")){
+    return isUsername;
+  }else if(value.includes("%")){
+    return isUsername;
+  }else if(value.includes("^")){
+    return isUsername;
+  }else if(value.includes("&")){
+    return isUsername;
+  }else if(value.includes("*")){
+    return isUsername;
+  }else if(value.includes("(")){
+    return isUsername;
+  }else if(value.includes(")")){
+    return isUsername;
+  }else if(value.includes("-")){
+    return isUsername;
+  }else if(value.includes("_")){
+    return isUsername;
+  }else if(value.includes("+")){
+    return isUsername;
+  }else if(value.includes("=")){
+    return isUsername;
+  }else if(value.includes("{")){
+    return isUsername;
+  }else if(value.includes("}")){
+    return isUsername;
+  }else if(value.includes("[")){
+    return isUsername;
+  }else if(value.includes("]")){
+    return isUsername;
+  }else if(value.includes(":")){
+    return isUsername;
+  }else if(value.includes(";")){
+    return isUsername;
+  }else if(value.includes("'")){
+    return isUsername;
+  }else if(value.includes('"')){
+    return isUsername;
+  }else if(value.includes("<")){
+    return isUsername;
+  }else if(value.includes(">")){
+    return isUsername;
+  }else if(value.includes("1")){
+    return isUsername;
+  }else if(value.includes("2")){
+    return isUsername;
+  }else if(value.includes("3")){
+    return isUsername;
+  }else if(value.includes("4")){
+    return isUsername;
+  }else if(value.includes("5")){
+    return isUsername;
+  }else if(value.includes("6")){
+    return isUsername;
+  }else if(value.includes("7")){
+    return isUsername;
+  }else if(value.includes("8")){
+    return isUsername;
+  }else if(value.includes("9")){
+    return isUsername;
+  }else if(value.includes("0")){
+    return isUsername;
+  }else{
+    return !isUsername;
+  }
+};
 
-const Signin = (props) => {
+const Signin = () => {
   const {
     value: firstNameValue,
     isValid: firstNameIsValid,
@@ -12,15 +110,7 @@ const Signin = (props) => {
     valueChangeHandler: firstNameChangeHandler,
     inputBlurHandler: firstNameBlurHandler,
     reset: resetFirstName,
-  } = useInput(isNotEmpty);
-  const {
-    value: lastNameValue,
-    isValid: lastNameIsValid,
-    hasError: lastNameHasError,
-    valueChangeHandler: lastNameChangeHandler,
-    inputBlurHandler: lastNameBlurHandler,
-    reset: resetLastName,
-  } = useInput(isNotEmpty);
+  } = useInput(isUsername);
   const {
     value: emailValue,
     isValid: emailIsValid,
@@ -32,7 +122,7 @@ const Signin = (props) => {
 
   let formIsValid = false;
 
-  if (firstNameIsValid && lastNameIsValid && emailIsValid) {
+  if (firstNameIsValid && emailIsValid) {
     formIsValid = true;
   }
 
@@ -44,20 +134,18 @@ const Signin = (props) => {
     }
 
     console.log("Submitted!");
-    console.log(firstNameValue, lastNameValue, emailValue);
+    console.log(firstNameValue, emailValue);
 
     resetFirstName();
-    resetLastName();
     resetEmail();
   };
 
   const firstNameClasses = firstNameHasError
     ? "form-control invalid"
     : "form-control";
-  const lastNameClasses = lastNameHasError
-    ? "form-control invalid"
+  const emailClasses = emailHasError 
+    ? "form-control invalid" 
     : "form-control";
-  const emailClasses = emailHasError ? "form-control invalid" : "form-control";
 
   return (
     <div className='cBody'>
@@ -68,7 +156,7 @@ const Signin = (props) => {
         <form onSubmit={submitHandler}>
           <div className='control-group'>
             <div className={firstNameClasses}>
-              <label htmlFor='name'>First Name</label>
+              <label htmlFor='name'>Username</label>
               <input
                 type='text'
                 id='name'
@@ -77,20 +165,7 @@ const Signin = (props) => {
                 onBlur={firstNameBlurHandler}
               />
               {firstNameHasError && (
-                <p className='error-text'>Please enter a first name.</p>
-              )}
-            </div>
-            <div className={lastNameClasses}>
-              <label htmlFor='name'>Last Name</label>
-              <input
-                type='text'
-                id='name'
-                value={lastNameValue}
-                onChange={lastNameChangeHandler}
-                onBlur={lastNameBlurHandler}
-              />
-              {lastNameHasError && (
-                <p className='error-text'>Please enter a last name.</p>
+                <p className='error-text'>Please enter your Username.</p>
               )}
             </div>
           </div>
@@ -108,9 +183,17 @@ const Signin = (props) => {
             )}
           </div>
           <div className='form-actions'>
-            <button disabled={!formIsValid}>Submit</button>
+            <button disabled={!formIsValid}>Sign In</button>
           </div>
         </form>
+              <div className="Links">
+              <div className="forgotpass">
+                <a href=""><p>Forgot Password ?</p></a>
+              </div>
+              <div className="createaccount">
+                <Link to="/signup"><p>Create Account</p></Link>
+              </div>
+              </div>
       </div>
     </div>
   );
